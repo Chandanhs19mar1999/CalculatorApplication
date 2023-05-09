@@ -74,12 +74,6 @@ class calculatorService {
 
         var answer = resultArray.slice(-1)[0]
 
-        if(operation == 'div') {
-            if(answer['result'] == 0) {
-                return callback("divider cannot be zero",null);
-            }
-        }
-
         let result = this.calculateResult(answer['result'],num2,operation);
         let answerObj = {
             'result':result,

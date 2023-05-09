@@ -57,6 +57,12 @@ class calculatorController {
             return callback("invalid operator",null);
         }
 
+        if(operator=='div') {
+            if(num == 0) {
+                return callback("divider cannot be zero",null);
+            }
+        }
+
         this.calculatorService.operationCalculator(operator,num,id,function(err,data) {
             if(err) {
                 return callback(err,null);
